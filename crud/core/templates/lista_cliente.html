@@ -18,6 +18,7 @@
     <li>{{ cliente.profissao }}</li>
     <li><a href={% url "exibir_cliente" pk=cliente.id %}>Exibir</a></li>
     <li><a href={% url "editar_cliente" pk=cliente.id %}>Editar</a></li>
+    <li><a href={% url "deletar_cliente" pk=cliente.id %}>Apagar</a></li>
     <hr>
 {% endfor %}
 </body>
