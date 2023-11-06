@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView, DetailView
 from .models import CLiente
 
 # Create your views here.
@@ -21,3 +21,8 @@ class ClienteUpdateView(UpdateView): #para editar clientes
     fields = "__all__"
     template_name = "form_cliente.html"
     success_url = reverse_lazy("lista_cliente")
+
+class ClienteDetailView(DetailView):#listar clientes por id
+    model = CLiente
+    template_name = "lista_clienteid.html"
+    context_object_name = "cliente"
